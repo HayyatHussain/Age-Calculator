@@ -41,7 +41,7 @@ main {
   padding: 50px;
 }
 
-form {
+.form {
   display: flex;
   gap: 30px;
   color: hsl(0, 1%, 44%);
@@ -49,16 +49,17 @@ form {
   padding-bottom: 40px;
 }
 
-form label {
+label {
   font-size: 13.5px;
+  margin-top: -18px;
 }
 
-form .inputs {
+.inputs {
   display: flex;
   flex-direction: column;
 }
 
-form input {
+input {
   width: 130px;
   height: 20px;
   border-radius: 5px;
@@ -89,4 +90,23 @@ form input {
 
 .svg:hover {
   background-color: hsl(0, 0%, 8%);
+}
+
+/*
+ Classes to add when input is invalid (check script.js)
+*/
+
+.invalid-input {
+  border: 1px solid hsl(0, 100%, 67%);
+}
+
+.label-invalid-text {
+  color: hsl(0, 100%, 67%);
+}
+
+.invalid-text {
+  color: hsl(0, 100%, 67%);
+  font-size: 10.5px;
+  font-style: italic;
+  margin-top: 8px;
 }
