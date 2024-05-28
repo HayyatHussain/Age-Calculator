@@ -188,6 +188,11 @@ svgButton.addEventListener("click", () => {
   let outputM = currentMonth - Number(valueMonth);
   let outputD = currentDay - Number(valueDay);
 
+  if (outputM == 0 && outputY == 0) {
+    updateOutputs();
+    return; //Return
+  } else {
+    
   if (outputM < 1) {
     outputY--;
     outputM += 12;
@@ -204,6 +209,8 @@ svgButton.addEventListener("click", () => {
     outputM--;
     outputD += 28;
   }
+  }
+
 
   const updateOutputs = () => {
     const increments = [outputYears, outputMonths, outputDays];
