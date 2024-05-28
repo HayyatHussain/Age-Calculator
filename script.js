@@ -188,30 +188,6 @@ svgButton.addEventListener("click", () => {
   let outputM = currentMonth - Number(valueMonth);
   let outputD = currentDay - Number(valueDay);
 
-  if (outputM == 0 && outputY == 0) {
-    updateOutputs();
-    return; //Return
-  } else {
-    
-  if (outputM < 1) {
-    outputY--;
-    outputM += 12;
-  }
-  if (outputD < 1 && validateInputByMonth1(outputM)) {
-    outputM--;
-    outputD += 31;
-  }
-  if (outputD < 1 && validateInputByMonth2(outputM)) {
-    outputM--;
-    outputD += 30;
-  }
-  if (outputD < 1 && outputM == 2) {
-    outputM--;
-    outputD += 28;
-  }
-  }
-
-
   const updateOutputs = () => {
     const increments = [outputYears, outputMonths, outputDays];
     const outputs = [outputY, outputM, outputD];
@@ -236,6 +212,28 @@ svgButton.addEventListener("click", () => {
     }
   };
 
+  if (outputM == 0 && outputY == 0) {
+    updateOutputs();
+    return; //Return
+  } else {
+    
+  if (outputM < 1) {
+    outputY--;
+    outputM += 12;
+  }
+  if (outputD < 1 && validateInputByMonth1(outputM)) {
+    outputM--;
+    outputD += 31;
+  }
+  if (outputD < 1 && validateInputByMonth2(outputM)) {
+    outputM--;
+    outputD += 30;
+  }
+  if (outputD < 1 && outputM == 2) {
+    outputM--;
+    outputD += 28;
+  }
+  }
   // Call the updateOutputs function immediately to avoid initial delay
   updateOutputs();
 });
