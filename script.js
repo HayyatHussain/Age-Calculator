@@ -221,6 +221,12 @@ svgButton.addEventListener("click", () => {
     outputY--;
     outputM += 12;
   }
+
+  if (outputM > 11) {
+    outputY++;
+    outputM -= 12;
+  }
+    
   if (outputD < 1 && validateInputByMonth1(outputM)) {
     outputM--;
     outputD += 31;
